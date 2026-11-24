@@ -1,0 +1,58 @@
+<rml>
+<head>
+  <title>SourceKrillion</title>
+  <link type="text/rcss" href="game.rcss"/>
+</head>
+<body id="body" data-phase="intro">
+  <div id="game">
+    <div id="ocean"></div>
+    <div class="vignette"></div>
+    <div class="danger-glow" id="danger-glow"></div>
+    <div class="flash" id="flash"></div>
+    <button id="menu-btn" class="square menu-btn" data-action="menu">☰</button>
+    <div class="utility" id="utility">
+      <button class="square" id="mute-btn" data-action="mute"><svg id="mute-icon" src="../sprites/sound-on.svg"/></button>
+      <button class="square" id="settings-btn" data-action="settings">⚙</button>
+      <button class="square" id="wardrobe-btn" data-action="wardrobe"><svg src="../sprites/shirt.svg"/></button>
+    </div>
+    <div class="hero" id="hero">
+      <div class="hero-h1"><span class="open-label">INDEPENDENT · OPEN SOURCE</span><div class="hero-word" id="hero-word"></div></div>
+      <p class="tagline" id="tagline">THE DAILY DIVE</p>
+      <p class="subline" id="subline">7 prompts · 25 seconds each · rarer answers sink deeper</p>
+    </div>
+    <div class="hud" id="hud">
+      <div class="hud-pod pixel-frame"><span>DEPTH</span><strong id="depth">0m</strong></div>
+      <div class="round-progress"><div id="round-dots"></div><span id="round-label">SURFACE</span></div>
+      <div class="hud-pod pixel-frame right"><span>SCORE</span><strong id="score">0</strong></div>
+    </div>
+    <button id="mascot" class="mascot" data-action="poke"><div class="gold-aura" id="gold-aura"></div><svg id="mascot-img" src="../sprites/krill.svg"/><span id="blub">blub!</span></button>
+    <div id="prompt-card" class="prompt-card pixel-frame" hidden="hidden"><div class="scanlines"></div><p class="eyebrow" id="prompt-number">PROMPT 1 OF 7</p><h2 id="prompt-text"></h2><p class="hint">▼ rarer answers sink deeper ▼</p></div>
+    <div id="landing" class="landing" hidden="hidden"><div class="land-icon-wrap" id="land-icon-wrap"><svg id="land-icon" class="land-icon" src="../sprites/plankton.svg"/></div><p class="eyebrow" id="land-tier"></p><h2 id="land-answer"></h2><p id="land-points"></p><p id="land-quip"></p></div>
+    <div id="falling-answer" class="falling-answer" hidden="hidden"></div>
+    <div id="tier-ladder" class="tier-ladder" hidden="hidden"></div>
+    <div class="intro" id="intro">
+      <div class="how-to" id="how-to"><div class="how-summary" data-action="howto" id="how-summary">▸ HOW TO PLAY</div><div class="how-list" id="how-list" hidden="hidden"><p>• 7 prompts a day. same for everyone.</p><p>• 25 seconds to name one thing.</p><p>• rare answers score big. obvious ones float.</p><p>• every point sinks you 10 metres. 700 is the trench.</p><p>• one daily dive. unlimited, archive and packs whenever you like.</p></div></div>
+      <div class="intro-links"><button class="text-button" data-action="privacy">Privacy</button><button class="text-button small" data-action="faq">FAQ</button></div>
+      <button id="start-btn" class="begin-btn" data-action="begin">▼ BEGIN DESCENT ▼</button>
+      <div class="intro-meta"><span id="day-number">DIVE …</span><div class="intro-nav"><button data-action="logbook">LOGBOOK ⟲</button><button data-action="friends">FRIENDS ☻</button><button data-action="unlimited">UNLIMITED ∞</button></div></div>
+      <p id="boot-error" class="error" hidden="hidden"></p>
+      <p id="offline-note" class="sample-note" hidden="hidden"></p>
+    </div>
+    <div id="answer-dock" class="answer-dock" hidden="hidden">
+      <div class="dock-fade"></div>
+      <div class="answer-status" id="answer-status" hidden="hidden"></div>
+      <div id="answer-form">
+        <div class="timer" id="timer"><div class="sonar-ring"></div><div class="sonar-cross-h"></div><div class="sonar-cross-v"></div><div class="sonar-sweep" id="sonar"></div><span id="timer-number">25</span></div>
+        <div class="input-wrap"><input type="text" id="answer" maxlength="256"/><span class="placeholder" id="answer-ph">type one answer…</span><div class="time-bar" id="time-bar"></div></div>
+        <button id="submit-btn" data-action="submit" class="disabled">DIVE</button>
+      </div>
+    </div>
+    <p class="preview-label" id="preview-label" hidden="hidden"></p>
+    <div class="next-wrap" id="next-wrap" hidden="hidden"><button class="next-btn" id="next-btn" data-action="next">DESCEND ▼</button></div>
+    <div class="results" id="results" hidden="hidden"></div>
+    <div class="party" id="party" hidden="hidden"></div>
+    <div class="layer" id="layer" hidden="hidden"><div class="backdrop" data-action="close"></div><div class="panel" id="panel"></div></div>
+    <div class="crt"></div>
+  </div>
+</body>
+</rml>

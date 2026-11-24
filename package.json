@@ -1,0 +1,25 @@
+{
+  "name": "sourcekrillion",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "dev": "DATABASE_PATH=./data/dev.db LOCAL_DEVELOPMENT=true node src/server.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "@fontsource/vt323": "^5.2.7",
+    "playwright": "^1.58.0",
+    "sharp": "^0.35.5"
+  },
+  "dependencies": {
+    "ws": "^8.23.0"
+  },
+  "description": "SourceKrillion: an independent, open-source rare-answer trivia game",
+  "engines": {
+    "node": ">=22.13"
+  }
+}

@@ -1,0 +1,2 @@
+DejaVu fonts are free software (Bitstream Vera Fonts copyright, with DejaVu changes in the public domain).
+See https://dejavu-fonts.github.io/License.html for the full license text.
