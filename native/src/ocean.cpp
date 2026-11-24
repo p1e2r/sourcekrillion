@@ -122,9 +122,9 @@ void Ocean::setPhase(const std::string& p) { phase = p; targetActive = (p == "in
 void Ocean::setDepth(float v) { target = v; if (phase != "plunge" && phase != "surface") { depth = v; if (phase == "landed") moveCamera(v + 30, 500); } }
 void Ocean::round(float d, float cardHeight) { target = d; depth = d; fx.on = false; roundBase = d; auto l = layout(); float dockTop = l.height - 80; roundAnchor = std::max(8.f, std::min(l.mobile ? 175.f : 210.f, (dockTop - cardHeight) / 2)); moveCamera(d + (l.height / 2 - roundAnchor) / 2, 2200); }
 void Ocean::drop(float oldDepth, const std::string& tier, int score, float progress) {
-  job_.on = false; fx = {tier, progress, oldDepth, oldDepth + score * 10.f, true};
+  job_.on = false; if (!fx.on || fx.startDepth != oldDepth) dropFrom_ = cameraDepth; fx = {tier, progress, oldDepth, oldDepth + score * 10.f, true};
   float eased = tier == "plankton" ? (1 - std::cos(float(M_PI) * progress)) / 2 : easeInOut(progress);
-  cameraDepth = mixf(oldDepth + 120, oldDepth + score * 10.f + 30, eased); cameraTarget = oldDepth + score * 10.f + 30;
+  cameraDepth = mixf(dropFrom_, oldDepth + score * 10.f + 30, eased); cameraTarget = oldDepth + score * 10.f + 30;
   depth = tier == "krillion" ? oldDepth : mixf(oldDepth, oldDepth + score * 10.f, eased); target = oldDepth + score * 10.f;
 }
 void Ocean::typeAt(float x, float y, int n) { if (reduced) return; for (int i = 0; i < n; i++) particles_.push_back({x + (rnd() - .5f) * 8, y + rnd() * 10, (rnd() - .5f) * 8, -35 - rnd() * 15, 1, 0xb2dce8, true, 1 + rnd() * 2}); }

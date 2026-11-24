@@ -62,4 +62,5 @@ private:
   Image layers_[3], trenchMirror_;
   int w_ = 0, h_ = 0, pw_ = 0, ph_ = 0;
   double dt_ = .016;
+  float dropFrom_ = 0;
 };
